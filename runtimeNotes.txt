@@ -1,0 +1,22 @@
+extraLargeArray: 
+    doublerAppend time - 4.11 milliseconds
+    doublerInsert time - 768.72 milliseconds
+
+largeArray:
+    doublerAppend time - 421.37 microseconds
+    doublerInsert time - 6.57 milliseconds
+
+mediumArray:
+    doublerAppend time - 90.58 microseconds
+    doublerInsert time - 199.62 microseconds
+
+smallArray:
+    doublerAppend time - 64.91 microseconds
+    doublerInsert time - 106.5 microseconds
+
+tinyArray:
+    doublerAppend time - 51.20 microseconds
+    doublerInsert time - 93.70 microseconds
+
+When the array is smaller the functions operate at a speed fast enough that you wouldn't really be able to tell a difference in speed between them. Once the array gets to a certain length though you can tell the insert function takes a lot longer to get the job done. It's only going to get worse that bigger the array gets. Pretty soon the gap would be very noticeable. The append function definitely scales better. It is handling the same size array at a fraction of the time it takes the insert function.
+The insert function runs slower than the append function because instead of just pushing the number to the end of the array and moving on with the loop like the append function does. It adds it to the front of the array pushes everything else down in the array giving everything a new index. Which you wouldn't really notice it taking long at first but when the array gets big enough you are shifting a lot indexes around and it starts to take a lot more power.
